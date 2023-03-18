@@ -1,4 +1,4 @@
-package cc.cuitz.bvs.vo;
+package cc.cuitz.bvs.vo.common;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package cc.cuitz.bvs.advice;
 
-import cc.cuitz.bvs.vo.ApiResult;
+import cc.cuitz.bvs.vo.common.ApiResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;

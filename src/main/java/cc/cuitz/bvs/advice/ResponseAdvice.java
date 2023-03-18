@@ -1,6 +1,6 @@
 package cc.cuitz.bvs.advice;
 
-import cc.cuitz.bvs.vo.ApiResult;
+import cc.cuitz.bvs.vo.common.ApiResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.core.MethodParameter;
