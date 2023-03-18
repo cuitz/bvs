@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- *  服务类
- * </p>
+ * (SysRole)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
-public interface ISysRoleService extends IService<SysRole> {
+public interface SysRoleService extends IService<SysRole> {
 
 }

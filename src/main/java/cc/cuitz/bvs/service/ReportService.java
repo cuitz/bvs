@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.Report;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 报表记录表 服务类
- * </p>
+ * 报表记录表(Report)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-public interface IReportService extends IService<Report> {
+public interface ReportService extends IService<Report> {
 
 }

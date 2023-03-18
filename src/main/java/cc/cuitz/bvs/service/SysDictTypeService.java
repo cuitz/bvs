@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.SysDictType;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 字典类型表 服务类
- * </p>
+ * 字典类型表(SysDictType)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-public interface ISysDictTypeService extends IService<SysDictType> {
+public interface SysDictTypeService extends IService<SysDictType> {
 
 }

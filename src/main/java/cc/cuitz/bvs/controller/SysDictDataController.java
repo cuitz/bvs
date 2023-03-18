@@ -1,46 +1,51 @@
 package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.SysDictData;
-import cc.cuitz.bvs.mapper.SysDictDataMapper;
-import cc.cuitz.bvs.service.ISysDictDataService;
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import cc.cuitz.bvs.service.SysDictDataService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * <p>
- * 字典数据表 前端控制器
- * </p>
+ * 字典数据表(SysDictData)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
 @RestController
-@RequestMapping("/sysDictData")
+@RequestMapping("/api/sysDictData")
 public class SysDictDataController {
-    @Autowired
-    private SysDictDataMapper sysDictDataMapper;
+    /**
+     * 服务对象
+     */
+    @Resource
+    private SysDictDataService sysDictDataService;
 
-    @Autowired
-    private ISysDictDataService sysDictDataService;
-
-    @GetMapping("/findAll")
-    public PageInfo<SysDictData> find() {
-        PageHelper.startPage(1, 2);
-        List<SysDictData> data = sysDictDataMapper.selectList(null);
-        return PageInfo.of(data);
+    /**
+     * 根据ID查询
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/find/detail/{id}")
+    public SysDictData findDetail(@PathVariable String id) {
+        return this.sysDictDataService.getById(id);
     }
 
-    @PostMapping("/findPage")
-    public PageInfo<SysDictData> findPage(Page<SysDictData> page) {
-        return sysDictDataService.findPage(page);
+    /**
+     * 查询所有数据
+     *
+     * @param sysDictData 查询实体
+     * @return
+     */
+    @PostMapping("/find/all")
+    public List<SysDictData> findAll(SysDictData sysDictData) {
+        return this.sysDictDataService.list(new QueryWrapper<>(sysDictData));
     }
 
 }

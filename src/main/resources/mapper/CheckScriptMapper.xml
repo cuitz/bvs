@@ -2,4 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.cuitz.bvs.mapper.CheckScriptMapper">
 
+    <resultMap type="cc.cuitz.bvs.entity.CheckScript" id="CheckScriptMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="strategyId" column="strategy_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+    </resultMap>
 </mapper>

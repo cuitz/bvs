@@ -5,23 +5,19 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * <p>
- * 核查策略表
- * </p>
+ * 核查策略表(CheckStrategy)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
 @Getter
 @Setter
 @TableName("check_strategy")
 public class CheckStrategy extends Model<CheckStrategy> {
-
     /**
      * 主键
      */
@@ -31,15 +27,7 @@ public class CheckStrategy extends Model<CheckStrategy> {
     /**
      * 策略名称
      */
-    @TableField("name")
+    @TableField(value = "name")
     private String name;
 
-    public static final String ID = "id";
-
-    public static final String NAME = "name";
-
-    @Override
-    public Serializable pkVal() {
-        return this.id;
-    }
 }

@@ -5,24 +5,19 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * <p>
- * 任务记录表
- * </p>
+ * 任务记录表(Task)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
 @Getter
 @Setter
 @TableName("task")
 public class Task extends Model<Task> {
-
     /**
      * 任务id
      */
@@ -32,31 +27,19 @@ public class Task extends Model<Task> {
     /**
      * 任务名称
      */
-    @TableField("name")
+    @TableField(value = "name")
     private String name;
 
     /**
      * 创建人
      */
-    @TableField("creator")
+    @TableField(value = "creator")
     private String creator;
 
     /**
      * 创建时间
      */
-    @TableField("create_time")
+    @TableField(value = "create_time")
     private Date createTime;
 
-    public static final String ID = "id";
-
-    public static final String NAME = "name";
-
-    public static final String CREATOR = "creator";
-
-    public static final String CREATE_TIME = "create_time";
-
-    @Override
-    public Serializable pkVal() {
-        return this.id;
-    }
 }

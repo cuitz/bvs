@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.SysRoleMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 角色关联菜单表 服务类
- * </p>
+ * 角色关联菜单表(SysRoleMenu)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
-public interface ISysRoleMenuService extends IService<SysRoleMenu> {
+public interface SysRoleMenuService extends IService<SysRoleMenu> {
 
 }

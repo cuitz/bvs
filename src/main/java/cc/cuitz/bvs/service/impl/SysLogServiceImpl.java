@@ -2,19 +2,17 @@ package cc.cuitz.bvs.service.impl;
 
 import cc.cuitz.bvs.entity.SysLog;
 import cc.cuitz.bvs.mapper.SysLogMapper;
-import cc.cuitz.bvs.service.ISysLogService;
+import cc.cuitz.bvs.service.SysLogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 系统日志记录表 服务实现类
- * </p>
+ * 系统日志记录表(SysLog)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-@Service
-public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements ISysLogService {
+@Service("sysLogService")
+public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {
 
 }

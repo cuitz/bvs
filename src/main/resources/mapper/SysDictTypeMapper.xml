@@ -2,4 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.cuitz.bvs.mapper.SysDictTypeMapper">
 
+    <resultMap type="cc.cuitz.bvs.entity.SysDictType" id="SysDictTypeMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="dictName" column="dict_name" jdbcType="VARCHAR"/>
+        <result property="dictType" column="dict_type" jdbcType="VARCHAR"/>
+    </resultMap>
 </mapper>

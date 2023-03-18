@@ -5,12 +5,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * <p>
- * 任务记录表 Mapper 接口
- * </p>
+ * 任务记录表(Task)数据库访问层
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
 @Mapper
 public interface TaskMapper extends BaseMapper<Task> {

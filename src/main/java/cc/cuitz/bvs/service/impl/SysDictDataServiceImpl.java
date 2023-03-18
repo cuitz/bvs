@@ -2,33 +2,17 @@ package cc.cuitz.bvs.service.impl;
 
 import cc.cuitz.bvs.entity.SysDictData;
 import cc.cuitz.bvs.mapper.SysDictDataMapper;
-import cc.cuitz.bvs.service.ISysDictDataService;
+import cc.cuitz.bvs.service.SysDictDataService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
- * <p>
- * 字典数据表 服务实现类
- * </p>
+ * 字典数据表(SysDictData)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-@Service
-public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDictData> implements ISysDictDataService {
+@Service("sysDictDataService")
+public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDictData> implements SysDictDataService {
 
-    @Autowired
-    private SysDictDataMapper sysDictDataMapper;
-
-    @Override
-    public PageInfo<SysDictData> findPage(Page<SysDictData> page) {
-        List<SysDictData> data = sysDictDataMapper.selectList(null);
-        return PageInfo.of(data);
-    }
 }

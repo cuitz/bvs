@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.SysLog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 系统日志记录表 服务类
- * </p>
+ * 系统日志记录表(SysLog)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-public interface ISysLogService extends IService<SysLog> {
+public interface SysLogService extends IService<SysLog> {
 
 }

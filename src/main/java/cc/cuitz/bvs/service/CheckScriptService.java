@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.CheckScript;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 检查脚本表 服务类
- * </p>
+ * 检查脚本表(CheckScript)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-public interface ICheckScriptService extends IService<CheckScript> {
+public interface CheckScriptService extends IService<CheckScript> {
 
 }

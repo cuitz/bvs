@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.TaskResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 任务结果表 服务类
- * </p>
+ * 任务结果表(TaskResult)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
-public interface ITaskResultService extends IService<TaskResult> {
+public interface TaskResultService extends IService<TaskResult> {
 
 }

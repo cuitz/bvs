@@ -4,13 +4,11 @@ import cc.cuitz.bvs.entity.CheckStrategy;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>
- * 核查策略表 服务类
- * </p>
+ * 核查策略表(CheckStrategy)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:11
  */
-public interface ICheckStrategyService extends IService<CheckStrategy> {
+public interface CheckStrategyService extends IService<CheckStrategy> {
 
 }

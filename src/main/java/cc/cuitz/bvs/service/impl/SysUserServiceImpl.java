@@ -2,19 +2,17 @@ package cc.cuitz.bvs.service.impl;
 
 import cc.cuitz.bvs.entity.SysUser;
 import cc.cuitz.bvs.mapper.SysUserMapper;
-import cc.cuitz.bvs.service.ISysUserService;
+import cc.cuitz.bvs.service.SysUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- * 用户表 服务实现类
- * </p>
+ * 用户表(SysUser)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-18
+ * @since 2023-03-19 00:13:12
  */
-@Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
+@Service("sysUserService")
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
 }
