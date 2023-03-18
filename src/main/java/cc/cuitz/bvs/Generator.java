@@ -16,10 +16,11 @@ public class Generator {
                         .outputDir(userDir + "/src/main/java")
                         .disableOpenDir()
                         .author("cuitongzhe")
+                        // .enableSwagger()
                         .dateType(DateType.ONLY_DATE))
                 .packageConfig(builder -> builder.parent("cc.cuitz.bvs")
                         .pathInfo(Collections.singletonMap(OutputFile.xml, userDir + "/src/main/resources/mapper")))
-                .strategyConfig(builder -> builder.addInclude("check_item")
+                .strategyConfig(builder -> builder.addInclude("check_item","check_point","check_script","check_strategy","report","sys_dict_data","sys_dict_type","sys_log","sys_menu","sys_role","sys_role_menu","sys_user","sys_user_role","task","task_result","task_result_item","task_result_point","task_target")
                         .enableSkipView()
                         // entity
                         .entityBuilder()
