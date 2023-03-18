@@ -28,7 +28,6 @@ public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDi
 
     @Override
     public PageInfo<SysDictData> findPage(Page<SysDictData> page) {
-        PageHelper.startPage(page.getPageNum(), page.getPageSize());
         List<SysDictData> data = sysDictDataMapper.selectList(null);
         return PageInfo.of(data);
     }
