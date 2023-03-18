@@ -2,10 +2,13 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.SysDictData;
 import cc.cuitz.bvs.mapper.SysDictDataMapper;
+import cc.cuitz.bvs.service.ISysDictDataService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +28,9 @@ public class SysDictDataController {
     @Autowired
     private SysDictDataMapper sysDictDataMapper;
 
+    @Autowired
+    private ISysDictDataService sysDictDataService;
+
     @GetMapping("/findAll")
     public PageInfo<SysDictData> find() {
         PageHelper.startPage(1, 2);
@@ -32,9 +38,9 @@ public class SysDictDataController {
         return PageInfo.of(data);
     }
 
-    @GetMapping("/getString")
-    public String getString() {
-        int a = 1/0;
-        return "hello";
+    @PostMapping("/findPage")
+    public PageInfo<SysDictData> findPage(Page<SysDictData> page) {
+        return sysDictDataService.findPage(page);
     }
+
 }
