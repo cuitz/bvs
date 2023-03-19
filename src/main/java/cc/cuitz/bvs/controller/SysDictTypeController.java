@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.SysDictType;
 import cc.cuitz.bvs.service.SysDictTypeService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 字典类型表(SysDictType)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @RestController
 @RequestMapping("/api/sysDictType")
@@ -44,8 +43,19 @@ public class SysDictTypeController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<SysDictType> findAll(SysDictType sysDictType) {
+    public List<SysDictType> findAll(@RequestBody SysDictType sysDictType) {
         return this.sysDictTypeService.list(new QueryWrapper<>(sysDictType));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<SysDictType> findPage(@RequestBody QueryParam<SysDictType> queryParam) {
+        return this.sysDictTypeService.page(queryParam);
     }
 
 }

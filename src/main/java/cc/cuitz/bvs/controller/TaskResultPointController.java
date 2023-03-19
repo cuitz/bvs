@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.TaskResultPoint;
 import cc.cuitz.bvs.service.TaskResultPointService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 任务检查点结果表(TaskResultPoint)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:35
+ * @since 2023-03-19 22:06:13
  */
 @RestController
 @RequestMapping("/api/taskResultPoint")
@@ -44,8 +43,19 @@ public class TaskResultPointController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<TaskResultPoint> findAll(TaskResultPoint taskResultPoint) {
+    public List<TaskResultPoint> findAll(@RequestBody TaskResultPoint taskResultPoint) {
         return this.taskResultPointService.list(new QueryWrapper<>(taskResultPoint));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<TaskResultPoint> findPage(@RequestBody QueryParam<TaskResultPoint> queryParam) {
+        return this.taskResultPointService.page(queryParam);
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.Date;
  * 检查项表(CheckItem)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:33
+ * @since 2023-03-19 22:06:12
  */
 @Getter
 @Setter

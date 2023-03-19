@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.SysUser;
 import cc.cuitz.bvs.service.SysUserService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 用户表(SysUser)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @RestController
 @RequestMapping("/api/sysUser")
@@ -44,8 +43,19 @@ public class SysUserController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<SysUser> findAll(SysUser sysUser) {
+    public List<SysUser> findAll(@RequestBody SysUser sysUser) {
         return this.sysUserService.list(new QueryWrapper<>(sysUser));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<SysUser> findPage(@RequestBody QueryParam<SysUser> queryParam) {
+        return this.sysUserService.page(queryParam);
     }
 
 }

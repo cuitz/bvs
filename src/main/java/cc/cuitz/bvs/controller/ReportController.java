@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.Report;
 import cc.cuitz.bvs.service.ReportService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 报表记录表(Report)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @RestController
 @RequestMapping("/api/report")
@@ -44,8 +43,19 @@ public class ReportController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<Report> findAll(Report report) {
+    public List<Report> findAll(@RequestBody Report report) {
         return this.reportService.list(new QueryWrapper<>(report));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<Report> findPage(@RequestBody QueryParam<Report> queryParam) {
+        return this.reportService.page(queryParam);
     }
 
 }

@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.TaskResult;
 import cc.cuitz.bvs.service.TaskResultService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 任务结果表(TaskResult)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:13
  */
 @RestController
 @RequestMapping("/api/taskResult")
@@ -44,8 +43,19 @@ public class TaskResultController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<TaskResult> findAll(TaskResult taskResult) {
+    public List<TaskResult> findAll(@RequestBody TaskResult taskResult) {
         return this.taskResultService.list(new QueryWrapper<>(taskResult));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<TaskResult> findPage(@RequestBody QueryParam<TaskResult> queryParam) {
+        return this.taskResultService.page(queryParam);
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.Date;
  * 检查脚本表(CheckScript)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @Getter
 @Setter

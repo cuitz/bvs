@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.SysRole;
 import cc.cuitz.bvs.service.SysRoleService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * (SysRole)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @RestController
 @RequestMapping("/api/sysRole")
@@ -44,8 +43,19 @@ public class SysRoleController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<SysRole> findAll(SysRole sysRole) {
+    public List<SysRole> findAll(@RequestBody SysRole sysRole) {
         return this.sysRoleService.list(new QueryWrapper<>(sysRole));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<SysRole> findPage(@RequestBody QueryParam<SysRole> queryParam) {
+        return this.sysRoleService.page(queryParam);
     }
 
 }

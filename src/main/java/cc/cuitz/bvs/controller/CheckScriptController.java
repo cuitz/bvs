@@ -2,11 +2,10 @@ package cc.cuitz.bvs.controller;
 
 import cc.cuitz.bvs.entity.CheckScript;
 import cc.cuitz.bvs.service.CheckScriptService;
+import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * 检查脚本表(CheckScript)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 17:56:34
+ * @since 2023-03-19 22:06:12
  */
 @RestController
 @RequestMapping("/api/checkScript")
@@ -44,8 +43,19 @@ public class CheckScriptController {
      * @return
      */
     @PostMapping("/find/all")
-    public List<CheckScript> findAll(CheckScript checkScript) {
+    public List<CheckScript> findAll(@RequestBody CheckScript checkScript) {
         return this.checkScriptService.list(new QueryWrapper<>(checkScript));
+    }
+
+    /**
+     * 分页查询数据
+     *
+     * @param queryParam 查询参数
+     * @return
+     */
+    @PostMapping("/find/page")
+    public PageInfo<CheckScript> findPage(@RequestBody QueryParam<CheckScript> queryParam) {
+        return this.checkScriptService.page(queryParam);
     }
 
 }
