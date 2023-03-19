@@ -1,26 +1,23 @@
 package cc.cuitz.bvs;
 
 import cc.cuitz.bvs.entity.SysDictData;
-import cc.cuitz.bvs.mapper.SysDictDataMapper;
+import cc.cuitz.bvs.service.SysDictDataService;
 import cn.hutool.json.JSONUtil;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
+import javax.annotation.Resource;
 
 @SpringBootTest
 public class MyTest {
-    @Autowired
-    private SysDictDataMapper sysDictDataMapper;
+
+    @Resource
+    private SysDictDataService sysDictDataService;
 
     @Test
     void test() {
-        PageHelper.startPage(1, 3);
-        List<SysDictData> sysDictData = sysDictDataMapper.selectList(null);
-        PageInfo<SysDictData> pageInfo = PageInfo.of(sysDictData);
-        System.out.println(JSONUtil.toJsonStr(pageInfo));
+        Page<SysDictData> page = sysDictDataService.page(Page.of(1, 1), null);
+        System.out.println(JSONUtil.toJsonStr(page));
     }
 }

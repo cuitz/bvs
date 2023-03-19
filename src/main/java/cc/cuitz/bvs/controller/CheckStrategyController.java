@@ -15,7 +15,7 @@ import java.util.List;
  * 核查策略表(CheckStrategy)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:11
+ * @since 2023-03-19 17:56:34
  */
 @RestController
 @RequestMapping("/api/checkStrategy")
@@ -29,7 +29,7 @@ public class CheckStrategyController {
     /**
      * 根据ID查询
      *
-     * @param id
+     * @param id 主键
      * @return
      */
     @PostMapping("/find/detail/{id}")

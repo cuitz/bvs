@@ -15,7 +15,7 @@ import java.util.List;
  * 任务核查项结果表(TaskResultItem)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:12
+ * @since 2023-03-19 17:56:35
  */
 @RestController
 @RequestMapping("/api/taskResultItem")
@@ -29,7 +29,7 @@ public class TaskResultItemController {
     /**
      * 根据ID查询
      *
-     * @param id
+     * @param id 主键
      * @return
      */
     @PostMapping("/find/detail/{id}")

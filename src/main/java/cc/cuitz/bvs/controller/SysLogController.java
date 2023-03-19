@@ -15,7 +15,7 @@ import java.util.List;
  * 系统日志记录表(SysLog)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:11
+ * @since 2023-03-19 17:56:34
  */
 @RestController
 @RequestMapping("/api/sysLog")
@@ -29,7 +29,7 @@ public class SysLogController {
     /**
      * 根据ID查询
      *
-     * @param id
+     * @param id 主键
      * @return
      */
     @PostMapping("/find/detail/{id}")

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * 任务核查项结果表(TaskResultItem)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:12
+ * @since 2023-03-19 17:56:35
  */
 @Service("taskResultItemService")
 public class TaskResultItemServiceImpl extends ServiceImpl<TaskResultItemMapper, TaskResultItem> implements TaskResultItemService {

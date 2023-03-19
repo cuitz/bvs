@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * 检查脚本表(CheckScript)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:11
+ * @since 2023-03-19 17:56:34
  */
 @Service("checkScriptService")
 public class CheckScriptServiceImpl extends ServiceImpl<CheckScriptMapper, CheckScript> implements CheckScriptService {

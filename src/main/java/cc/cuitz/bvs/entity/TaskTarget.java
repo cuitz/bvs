@@ -8,11 +8,13 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 /**
  * 任务核查目标数据表(TaskTarget)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-19 00:13:13
+ * @since 2023-03-19 17:56:35
  */
 @Getter
 @Setter
