@@ -12,3 +12,5 @@ spring:
     resources:
       # 禁用映射
       add-mappings: false
+sa-token:
+  token-name: bvs-token
