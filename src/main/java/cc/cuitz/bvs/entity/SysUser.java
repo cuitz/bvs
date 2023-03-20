@@ -14,7 +14,7 @@ import java.util.Date;
  * 用户表(SysUser)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 15:23:09
+ * @since 2023-03-20 17:39:38
  */
 @Getter
 @Setter
@@ -43,6 +43,12 @@ public class SysUser extends Model<SysUser> {
      */
     @TableField(value = "password")
     private String password;
+
+    /**
+     * 盐
+     */
+    @TableField(value = "salt")
+    private String salt;
 
     /**
      * 用户状态（0正常 1禁用 2过期）

@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -29,6 +30,19 @@ public class TaskController {
      */
     @Resource
     private TaskService taskService;
+
+    /**
+     * 新增数据
+     *
+     * @param task
+     * @return
+     */
+    @Operation(summary = "新增数据")
+    @Parameter(name = "task", required = true)
+    @PostMapping("/add")
+    public Task add(@RequestBody Task task) {
+        return this.taskService.insert(task);
+    }
 
     /**
      * 根据ID查询
@@ -68,8 +82,34 @@ public class TaskController {
             @Parameter(name = "condition", description = "查询条件")
     })
     @PostMapping("/find/page")
-    public PageInfo<Task> findPage(@RequestBody QueryParam<Task> queryParam) {
+    public PageInfo<Task> findPage(@RequestBody @Validated QueryParam<Task> queryParam) {
         return this.taskService.page(queryParam);
+    }
+
+    /**
+     * 修改数据
+     *
+     * @param task
+     * @return
+     */
+    @Operation(summary = "修改数据")
+    @Parameter(name = "task", required = true)
+    @PostMapping("/edit")
+    public boolean edit(@RequestBody Task task) {
+        return this.taskService.updateById(task);
+    }
+
+    /**
+     * 删除数据
+     *
+     * @param id
+     * @return
+     */
+    @Operation(summary = "删除数据")
+    @Parameter(name = "id", required = true)
+    @PostMapping("/delete")
+    public boolean delete(@RequestBody List<Integer> id) {
+        return this.taskService.removeBatchByIds(id);
     }
 
 }

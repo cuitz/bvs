@@ -12,5 +12,8 @@ spring:
     resources:
       # 禁用映射
       add-mappings: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 sa-token:
   token-name: bvs-token

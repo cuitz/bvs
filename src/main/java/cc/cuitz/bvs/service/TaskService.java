@@ -20,4 +20,6 @@ public interface TaskService extends IService<Task> {
      * @return 分页数据
      */
     PageInfo<Task> page(QueryParam<Task> queryParam);
+
+    Task insert(Task task);
 }
