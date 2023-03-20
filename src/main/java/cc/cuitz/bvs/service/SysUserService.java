@@ -20,4 +20,6 @@ public interface SysUserService extends IService<SysUser> {
      * @return 分页数据
      */
     PageInfo<SysUser> page(QueryParam<SysUser> queryParam);
+
+    void createUser(SysUser sysUser);
 }

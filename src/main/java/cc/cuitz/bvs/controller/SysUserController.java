@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -72,4 +73,9 @@ public class SysUserController {
         return this.sysUserService.page(queryParam);
     }
 
+    @PostMapping("/add")
+    public String add(@RequestBody @Validated SysUser user) {
+        this.sysUserService.createUser(user);
+        return "";
+    }
 }

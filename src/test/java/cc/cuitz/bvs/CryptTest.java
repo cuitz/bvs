@@ -1,11 +1,7 @@
 package cc.cuitz.bvs;
 
-import cc.cuitz.bvs.constants.BvsConstants;
-import cn.hutool.core.codec.Base64;
-import cn.hutool.crypto.SecureUtil;
+import cc.cuitz.bvs.util.AESUtil;
 import cn.hutool.crypto.digest.BCrypt;
-import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
-import cn.hutool.crypto.symmetric.SymmetricCrypto;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -23,10 +19,10 @@ public class CryptTest {
 
     @Test
     void testAES() {
-        SymmetricCrypto aes = new SymmetricCrypto(SymmetricAlgorithm.AES, BvsConstants.AES_KEY.getBytes());
-        String encryptBase64 = aes.encryptBase64("123456");
+        String encryptBase64 = AESUtil.encryptBase64("123456");
         System.out.println(encryptBase64);
-        System.out.println(aes.decryptStr(encryptBase64));
+        String decryptStr = AESUtil.decryptStr(encryptBase64);
+        System.out.println(decryptStr);
     }
 
     private void bcrypt(String password) {
