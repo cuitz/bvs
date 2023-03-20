@@ -14,7 +14,7 @@ import java.util.Date;
  * 任务结果表(TaskResult)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 @Getter
 @Setter
@@ -33,7 +33,7 @@ public class TaskResult extends Model<TaskResult> {
     private Integer taskId;
 
     /**
-     * 任务状态（0等待 1执行中 2暂停 3停止 4完成 5失败）
+     * 任务状态:task_status
      */
     @TableField(value = "status")
     private String status;

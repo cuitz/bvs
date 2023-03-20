@@ -17,7 +17,7 @@ import java.util.List;
  * 检查脚本表(CheckScript)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:29
+ * @since 2023-03-20 15:23:08
  */
 @Service("checkScriptService")
 public class CheckScriptServiceImpl extends ServiceImpl<CheckScriptMapper, CheckScript> implements CheckScriptService {

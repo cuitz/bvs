@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 任务检查点结果表(TaskResultPoint)数据库访问层
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:31
+ * @since 2023-03-20 15:23:10
  */
 @Mapper
 public interface TaskResultPointMapper extends BaseMapper<TaskResultPoint> {

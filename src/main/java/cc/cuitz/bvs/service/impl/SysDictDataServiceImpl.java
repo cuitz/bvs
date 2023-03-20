@@ -17,7 +17,7 @@ import java.util.List;
  * 字典数据表(SysDictData)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:08
  */
 @Service("sysDictDataService")
 public class SysDictDataServiceImpl extends ServiceImpl<SysDictDataMapper, SysDictData> implements SysDictDataService {

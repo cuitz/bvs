@@ -17,7 +17,7 @@ import java.util.List;
  * 系统日志记录表(SysLog)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 @Service("sysLogService")
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {

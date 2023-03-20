@@ -14,7 +14,7 @@ import java.util.Date;
  * 系统日志记录表(SysLog)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:08
  */
 @Getter
 @Setter

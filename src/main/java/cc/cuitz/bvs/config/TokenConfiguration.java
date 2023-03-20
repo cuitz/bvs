@@ -12,6 +12,8 @@ public class TokenConfiguration implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new SaInterceptor(handle -> StpUtil.checkLogin()))
                 .addPathPatterns("/**")
-                .excludePathPatterns("/api/login");
+                .excludePathPatterns("/api/login")
+                // 放行swagger
+                .excludePathPatterns("/swagger-ui/**", "/v3/api-docs/**");
     }
 }

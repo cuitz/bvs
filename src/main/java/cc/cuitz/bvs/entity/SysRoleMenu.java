@@ -14,7 +14,7 @@ import java.util.Date;
  * 角色关联菜单表(SysRoleMenu)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 @Getter
 @Setter

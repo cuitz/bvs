@@ -5,20 +5,19 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 /**
  * 菜单权限表(SysMenu)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:26:45
  */
 @Getter
 @Setter
-@TableName("sys_menu")
+@TableName(value = "sys_menu", autoResultMap = true)
 public class SysMenu extends Model<SysMenu> {
     /**
      * 菜单ID
@@ -68,7 +67,7 @@ public class SysMenu extends Model<SysMenu> {
     @TableField(value = "perms")
     private String perms;
 
-    @TableField(value = "meta")
+    @TableField(value = "meta", typeHandler = JacksonTypeHandler.class)
     private Object meta;
 
 }

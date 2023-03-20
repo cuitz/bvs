@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 角色关联菜单表(SysRoleMenu)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 public interface SysRoleMenuService extends IService<SysRoleMenu> {
 

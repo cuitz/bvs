@@ -17,7 +17,7 @@ import java.util.List;
  * 检查项表(CheckItem)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:29
+ * @since 2023-03-20 15:23:08
  */
 @Service("checkItemService")
 public class CheckItemServiceImpl extends ServiceImpl<CheckItemMapper, CheckItem> implements CheckItemService {

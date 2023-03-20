@@ -14,7 +14,7 @@ import java.util.Date;
  * 报表记录表(Report)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:29
+ * @since 2023-03-20 15:23:08
  */
 @Getter
 @Setter
@@ -45,7 +45,7 @@ public class Report extends Model<Report> {
     private String status;
 
     /**
-     * 生成的报表文件类型（0:docx,1:xlsx）
+     * 生成的报表文件类型:report_file_type
      */
     @TableField(value = "file_type")
     private String fileType;

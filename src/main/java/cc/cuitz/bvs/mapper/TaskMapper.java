@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 任务记录表(Task)数据库访问层
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 @Mapper
 public interface TaskMapper extends BaseMapper<Task> {

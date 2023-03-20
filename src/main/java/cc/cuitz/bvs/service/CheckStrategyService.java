@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 核查策略表(CheckStrategy)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:29
+ * @since 2023-03-20 15:23:08
  */
 public interface CheckStrategyService extends IService<CheckStrategy> {
 

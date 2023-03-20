@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 任务记录表(Task)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:09
  */
 public interface TaskService extends IService<Task> {
 

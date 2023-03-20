@@ -17,7 +17,7 @@ import java.util.List;
  * 字典类型表(SysDictType)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:08
  */
 @Service("sysDictTypeService")
 public class SysDictTypeServiceImpl extends ServiceImpl<SysDictTypeMapper, SysDictType> implements SysDictTypeService {

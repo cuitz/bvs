@@ -14,7 +14,7 @@ import java.util.Date;
  * 字典数据表(SysDictData)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-20 09:39:30
+ * @since 2023-03-20 15:23:08
  */
 @Getter
 @Setter
