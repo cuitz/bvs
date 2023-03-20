@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.SysDictTypeService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 字典类型表(SysDictType)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @RestController
 @RequestMapping("/api/sysDictType")
@@ -54,7 +55,7 @@ public class SysDictTypeController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<SysDictType> findPage(@RequestBody QueryParam<SysDictType> queryParam) {
+    public PageInfo<SysDictType> findPage(@RequestBody @Validated QueryParam<SysDictType> queryParam) {
         return this.sysDictTypeService.page(queryParam);
     }
 

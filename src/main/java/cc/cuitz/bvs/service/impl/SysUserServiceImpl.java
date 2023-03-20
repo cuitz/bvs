@@ -17,7 +17,7 @@ import java.util.List;
  * 用户表(SysUser)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:30
  */
 @Service("sysUserService")
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {

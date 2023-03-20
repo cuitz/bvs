@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 用户关联角色表(SysUserRole)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:30
  */
 public interface SysUserRoleService extends IService<SysUserRole> {
 

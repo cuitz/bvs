@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * (SysRole)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 public interface SysRoleService extends IService<SysRole> {
 

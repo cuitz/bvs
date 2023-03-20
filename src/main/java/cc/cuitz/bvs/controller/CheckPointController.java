@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.CheckPointService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 检查点表(CheckPoint)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:29
  */
 @RestController
 @RequestMapping("/api/checkPoint")
@@ -54,7 +55,7 @@ public class CheckPointController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<CheckPoint> findPage(@RequestBody QueryParam<CheckPoint> queryParam) {
+    public PageInfo<CheckPoint> findPage(@RequestBody @Validated QueryParam<CheckPoint> queryParam) {
         return this.checkPointService.page(queryParam);
     }
 

@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.TaskResultPointService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 任务检查点结果表(TaskResultPoint)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:31
  */
 @RestController
 @RequestMapping("/api/taskResultPoint")
@@ -54,7 +55,7 @@ public class TaskResultPointController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<TaskResultPoint> findPage(@RequestBody QueryParam<TaskResultPoint> queryParam) {
+    public PageInfo<TaskResultPoint> findPage(@RequestBody @Validated QueryParam<TaskResultPoint> queryParam) {
         return this.taskResultPointService.page(queryParam);
     }
 

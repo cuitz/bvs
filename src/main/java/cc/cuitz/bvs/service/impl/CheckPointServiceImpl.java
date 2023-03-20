@@ -17,7 +17,7 @@ import java.util.List;
  * 检查点表(CheckPoint)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:29
  */
 @Service("checkPointService")
 public class CheckPointServiceImpl extends ServiceImpl<CheckPointMapper, CheckPoint> implements CheckPointService {

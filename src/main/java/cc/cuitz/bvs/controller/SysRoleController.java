@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.SysRoleService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * (SysRole)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @RestController
 @RequestMapping("/api/sysRole")
@@ -54,7 +55,7 @@ public class SysRoleController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<SysRole> findPage(@RequestBody QueryParam<SysRole> queryParam) {
+    public PageInfo<SysRole> findPage(@RequestBody @Validated QueryParam<SysRole> queryParam) {
         return this.sysRoleService.page(queryParam);
     }
 

@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @Valid
 public class PageParam {
+    @NotNull
     @Min(1)
     private Integer pageNum;
 

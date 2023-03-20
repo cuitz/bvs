@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.SysUserRoleService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 用户关联角色表(SysUserRole)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:30
  */
 @RestController
 @RequestMapping("/api/sysUserRole")
@@ -54,7 +55,7 @@ public class SysUserRoleController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<SysUserRole> findPage(@RequestBody QueryParam<SysUserRole> queryParam) {
+    public PageInfo<SysUserRole> findPage(@RequestBody @Validated QueryParam<SysUserRole> queryParam) {
         return this.sysUserRoleService.page(queryParam);
     }
 

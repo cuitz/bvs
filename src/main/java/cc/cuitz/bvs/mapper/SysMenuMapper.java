@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 菜单权限表(SysMenu)数据库访问层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @Mapper
 public interface SysMenuMapper extends BaseMapper<SysMenu> {

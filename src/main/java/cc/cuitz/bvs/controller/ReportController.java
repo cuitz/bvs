@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.ReportService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 报表记录表(Report)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:29
  */
 @RestController
 @RequestMapping("/api/report")
@@ -54,7 +55,7 @@ public class ReportController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<Report> findPage(@RequestBody QueryParam<Report> queryParam) {
+    public PageInfo<Report> findPage(@RequestBody @Validated QueryParam<Report> queryParam) {
         return this.reportService.page(queryParam);
     }
 

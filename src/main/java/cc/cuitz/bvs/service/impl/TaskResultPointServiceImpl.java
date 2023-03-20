@@ -17,7 +17,7 @@ import java.util.List;
  * 任务检查点结果表(TaskResultPoint)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:31
  */
 @Service("taskResultPointService")
 public class TaskResultPointServiceImpl extends ServiceImpl<TaskResultPointMapper, TaskResultPoint> implements TaskResultPointService {

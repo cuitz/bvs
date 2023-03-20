@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 任务检查点结果表(TaskResultPoint)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:13
+ * @since 2023-03-20 09:39:31
  */
 public interface TaskResultPointService extends IService<TaskResultPoint> {
 

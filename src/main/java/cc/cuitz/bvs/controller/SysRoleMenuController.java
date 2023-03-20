@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.SysRoleMenuService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 角色关联菜单表(SysRoleMenu)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @RestController
 @RequestMapping("/api/sysRoleMenu")
@@ -54,7 +55,7 @@ public class SysRoleMenuController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<SysRoleMenu> findPage(@RequestBody QueryParam<SysRoleMenu> queryParam) {
+    public PageInfo<SysRoleMenu> findPage(@RequestBody @Validated QueryParam<SysRoleMenu> queryParam) {
         return this.sysRoleMenuService.page(queryParam);
     }
 

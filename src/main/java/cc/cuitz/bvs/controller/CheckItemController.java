@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.CheckItemService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 检查项表(CheckItem)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:29
  */
 @RestController
 @RequestMapping("/api/checkItem")
@@ -54,7 +55,7 @@ public class CheckItemController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<CheckItem> findPage(@RequestBody QueryParam<CheckItem> queryParam) {
+    public PageInfo<CheckItem> findPage(@RequestBody @Validated QueryParam<CheckItem> queryParam) {
         return this.checkItemService.page(queryParam);
     }
 

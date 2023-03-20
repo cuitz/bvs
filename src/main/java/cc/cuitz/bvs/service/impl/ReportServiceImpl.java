@@ -17,7 +17,7 @@ import java.util.List;
  * 报表记录表(Report)服务实现类
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @Service("reportService")
 public class ReportServiceImpl extends ServiceImpl<ReportMapper, Report> implements ReportService {

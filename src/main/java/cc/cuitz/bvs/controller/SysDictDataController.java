@@ -5,6 +5,7 @@ import cc.cuitz.bvs.service.SysDictDataService;
 import cc.cuitz.bvs.vo.common.QueryParam;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,7 +15,7 @@ import java.util.List;
  * 字典数据表(SysDictData)控制层
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @RestController
 @RequestMapping("/api/sysDictData")
@@ -54,7 +55,7 @@ public class SysDictDataController {
      * @return
      */
     @PostMapping("/find/page")
-    public PageInfo<SysDictData> findPage(@RequestBody QueryParam<SysDictData> queryParam) {
+    public PageInfo<SysDictData> findPage(@RequestBody @Validated QueryParam<SysDictData> queryParam) {
         return this.sysDictDataService.page(queryParam);
     }
 

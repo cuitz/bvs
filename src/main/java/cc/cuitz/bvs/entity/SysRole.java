@@ -14,7 +14,7 @@ import java.util.Date;
  * (SysRole)实体类
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:30
  */
 @Getter
 @Setter

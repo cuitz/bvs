@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
  * 检查点表(CheckPoint)服务接口
  *
  * @author cuitongzhe
- * @since 2023-03-19 22:06:12
+ * @since 2023-03-20 09:39:29
  */
 public interface CheckPointService extends IService<CheckPoint> {
 
