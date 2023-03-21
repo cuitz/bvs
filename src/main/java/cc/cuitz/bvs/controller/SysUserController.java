@@ -41,7 +41,10 @@ public class SysUserController {
     @Parameter(name = "id", required = true)
     @PostMapping("/find/detail/{id}")
     public SysUser findDetail(@PathVariable String id) {
-        return this.sysUserService.getById(id);
+        SysUser user = this.sysUserService.getById(id);
+        user.setSalt(null);
+        user.setPassword(null);
+        return user;
     }
 
     /**
@@ -54,6 +57,11 @@ public class SysUserController {
     @Parameter(name = "sysUser", description = "查询条件", required = true)
     @PostMapping("/find/all")
     public List<SysUser> findAll(@RequestBody SysUser sysUser) {
+        List<SysUser> users = this.sysUserService.list(new QueryWrapper<>(sysUser));
+        for (SysUser user : users) {
+            user.setSalt(null);
+            user.setPassword(null);
+        }
         return this.sysUserService.list(new QueryWrapper<>(sysUser));
     }
 
