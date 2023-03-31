@@ -5,10 +5,12 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 报表记录表(Report)实体类
@@ -18,7 +20,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@TableName("report")
+@TableName(value = "report", autoResultMap = true)
 public class Report extends Model<Report> {
     /**
      * 主键
@@ -47,8 +49,8 @@ public class Report extends Model<Report> {
     /**
      * 生成的报表文件类型:report_file_type
      */
-    @TableField(value = "file_type")
-    private String fileType;
+    @TableField(value = "file_type", typeHandler = JacksonTypeHandler.class)
+    private List<Integer> fileType;
 
     /**
      * 报表文件存储路径
