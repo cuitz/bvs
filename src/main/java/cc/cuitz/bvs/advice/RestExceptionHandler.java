@@ -10,12 +10,19 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+import javax.security.auth.login.FailedLoginException;
+
 @RestControllerAdvice
 @Slf4j
 public class RestExceptionHandler {
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<ApiResult<String>> noHandleFoundException(NoHandlerFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ApiResult.fail(HttpStatus.NOT_FOUND.value(), e.getMessage()));
+    }
+
+    @ExceptionHandler(FailedLoginException.class)
+    public ResponseEntity<ApiResult<String>> noHandleFoundException(FailedLoginException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ApiResult.fail(HttpStatus.OK.value(), e.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
