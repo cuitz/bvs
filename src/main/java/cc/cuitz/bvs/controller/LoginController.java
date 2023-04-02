@@ -1,13 +1,8 @@
 package cc.cuitz.bvs.controller;
 
-import cc.cuitz.bvs.entity.SysUser;
-import cc.cuitz.bvs.service.SysUserService;
+import cc.cuitz.bvs.service.LoginService;
+import cc.cuitz.bvs.vo.LoginInfo;
 import cc.cuitz.bvs.vo.LoginParam;
-import cn.dev33.satoken.session.SaSession;
-import cn.dev33.satoken.stp.SaTokenInfo;
-import cn.dev33.satoken.stp.StpUtil;
-import cn.hutool.crypto.digest.BCrypt;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,24 +21,12 @@ import javax.security.auth.login.FailedLoginException;
 public class LoginController {
 
     @Resource
-    private SysUserService sysUserService;
+    private LoginService loginService;
 
     @Operation(summary = "登录")
     @Parameter(name = "loginParam", required = true)
     @PostMapping("/login")
-    public SaTokenInfo login(@RequestBody @Validated LoginParam loginParam) throws FailedLoginException {
-        LambdaQueryWrapper<SysUser> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(SysUser::getUsername, loginParam.getUsername());
-        SysUser user = this.sysUserService.getOne(queryWrapper);
-        if (user == null) {
-            throw new FailedLoginException("用户名或密码错误");
-        }
-        boolean loginResult = BCrypt.checkpw(loginParam.getPassword(), user.getPassword());
-        if (!loginResult) {
-            throw new FailedLoginException("用户名或密码错误");
-        }
-        StpUtil.login(user.getUsername());
-        StpUtil.getSession().set(SaSession.USER, user);
-        return StpUtil.getTokenInfo();
+    public LoginInfo login(@RequestBody @Validated LoginParam loginParam) throws FailedLoginException {
+        return loginService.login(loginParam);
     }
 }
