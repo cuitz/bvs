@@ -12,9 +12,17 @@ public class TokenConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new SaInterceptor(handle -> {
+                    // 登录校验
                     SaRouter.match("/**")
                             .notMatch("/api/login")
                             .check(f -> StpUtil.checkLogin());
+
+                    // 根据路由划分模块，不同模块不同鉴权
+                    SaRouter.match("/api/user/**", r -> StpUtil.checkPermission("user"));
+                    SaRouter.match("/api/admin/**", r -> StpUtil.checkPermission("admin"));
+                    SaRouter.match("/api/task/**", r -> StpUtil.checkPermission("task"));
+                    SaRouter.match("/api/strategy/**", r -> StpUtil.checkPermission("strategy"));
+                    SaRouter.match("/api/report/**", r -> StpUtil.checkPermission("strategy"));
                 }))
                 .addPathPatterns("/**")
                 // 放行swagger
